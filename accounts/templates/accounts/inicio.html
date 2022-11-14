@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block conteudo%}
+<br>
+{%if user.is_authenticated%}
+<h1 mt-3 mb-3>Olá {{ user.first_name }} {{user.last_name}}</h1>
+
+<p>Para sair, <a href="{% url 'index_login' %}">clique aqui.</a> </p>
+{%endif%}
+
+
+<br>
+<form method="POST" action=" {% url 'index' %}">
+    <button type="submit" name = "cadastrar" class="btn btn-primary">Ver Contatos da Agenda</button>
+    {% csrf_token %}
+  </form>
+  <br><br>
+<form method="POST" action=" {% url 'dashboard' %}">
+    <button type="submit" name = "cadastrar" class="btn btn-primary">Criar um novo Contato</button>
+    {% csrf_token %}
+  </form> 
+{%endblock%}

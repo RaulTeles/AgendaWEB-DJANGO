@@ -1,0 +1,28 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title>{%block titulo%}{%endblock%}Agenda</title>
+    {%include 'parciais/_head.html'%}
+
+</head>
+
+<body>
+    {% include 'parciais/_nav.html'%}
+     <!-- Page Content -->
+    <div class="container">
+    <div class="row">
+      
+    </div>
+    {%block conteudo%}
+    {%endblock%}
+    </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block conteudo%}
+<br>
+<h1 mt-3 mb-3>Olá {{ user.first_name }} {{user.last_name}}</h1>
+<p>Para sair, <a href="{% url 'index' %}">clique aqui.</a> </p>
+
+<div class="container">
+    <form action="{%url 'dashboard'%}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            {{form}}
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-primary">Criar Contato</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{%endblock%}

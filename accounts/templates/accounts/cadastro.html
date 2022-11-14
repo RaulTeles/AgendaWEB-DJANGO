@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{%block titulo%}Cadastro | {%endblock%}
+{%block conteudo%}
+
+<div style="text-align:center">
+<h1 mt-3 mb-3>Cadastro</h1>
+</div>
+
+<form method="POST" action=" {% url 'cadastro' %}">
+      {%include 'parciais/_message.html'%}
+      {% csrf_token %}
+      
+      <!-- o value = "{{request.POST.}}" serve para mostrar o que foi digitado nos campos anteriormente -->
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input type="email" name="email" value = "{{request.POST.email}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu Email">
+    </div>
+    <div class="form-group">
+      <label for="inputNome">Nome</label>
+      <input type="text" name="nome" value = "{{request.POST.nome}}" class="form-control" id="inputNome" placeholder="Digite seu Nome">
+    </div>
+    <div class="form-group">
+      <label for="inputSobreonme">Sobrenome</label>
+      <input type="text" name="sobrenome" value = "{{request.POST.sobrenome}}" class="form-control" id="inputSobreonme" placeholder="Digite seu Sobrenome">
+    </div>
+    <div class="form-group">
+      <label for="inputUsuario">Usuário</label>
+      <input type="text" name="usuario" value = "{{request.POST.usuario}}" class="form-control" id="inputUsuario" placeholder="Digite seu usuario">
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Senha</label>
+      <input type="password" name="senha" value = "{{request.POST.senha}}" class="form-control" id="inputPassword" placeholder="Digite sua Senha">
+    </div>
+    <div class="form-group">
+      <label for="inputPassword2">Repitir a Senha</label>
+      <input type="password" name="senha2" value = "{{request.POST.senha2}}" class="form-control" id="inputPassword2" placeholder="Digite sua Senha Novamente">
+      <br>
+    </div>
+    <!-- <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+    <button type="submit" class="btn btn-primary">Cadastrar-me</button>
+  </form>
+{%endblock%}
